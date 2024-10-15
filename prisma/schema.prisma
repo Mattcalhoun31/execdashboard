@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model EmailCampaign {
+  id              Int      @id @default(autoincrement())
+  campaignName    String
+  totalEmailsSent Int
+  openRate        Float
+  clickRate       Float
+  bounceRate      Float
+  timestamp       DateTime @default(now())
+}
